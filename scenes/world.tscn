@@ -1,11 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4awor4kdnlm6"]
+[gd_scene load_steps=3 format=3 uid="uid://b4awor4kdnlm6"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_oqxmm"]
-vertices = PackedVector2Array(1135.96, 632.969, 23.0938, 630.023, 28.8984, 32.8594, 1134.03, 17.1406)
+[ext_resource type="PackedScene" uid="uid://4j8easwnycj1" path="res://scenes/friendly.tscn" id="1_3gtl8"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_cotoa"]
+vertices = PackedVector2Array(1135.98, 632, 12.1563, 632.992, 21.8438, 18.9688, 1135.01, 16.0234)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(19, 23, 1144, 7, 1146, 643, 13, 640)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(12, 9, 1145, 6, 1146, 642, 2, 643)])
 
 [node name="World" type="Node2D"]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_oqxmm")
+navigation_polygon = SubResource("NavigationPolygon_cotoa")
+
+[node name="Friendly" parent="." instance=ExtResource("1_3gtl8")]
+position = Vector2(583, 317)
