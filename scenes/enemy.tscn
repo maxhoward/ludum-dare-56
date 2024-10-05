@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmi56ja1spiof"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_8dp7b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0gw7k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i44e4"]
+
+[node name="Enemy" type="RigidBody2D"]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_8dp7b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0gw7k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i44e4")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
