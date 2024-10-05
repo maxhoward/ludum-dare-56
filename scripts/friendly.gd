@@ -12,7 +12,6 @@ enum State {GOING_HOME, GOING_TO_FARM, RESTING, FARMING}
 var state = State.RESTING
 
 func _ready():
-	# Make sure to not await during _ready.
 	actor_setup.call_deferred()
 
 func _physics_process(delta: float) -> void:
