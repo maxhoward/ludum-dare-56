@@ -1,16 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4awor4kdnlm6"]
+[gd_scene load_steps=6 format=3 uid="uid://b4awor4kdnlm6"]
 
 [ext_resource type="PackedScene" uid="uid://4j8easwnycj1" path="res://scenes/friendly.tscn" id="1_3gtl8"]
+[ext_resource type="Texture2D" uid="uid://07tspmny6pxm" path="res://assets/home.svg" id="2_w8a1y"]
+[ext_resource type="Texture2D" uid="uid://d3ib3g1uikf8i" path="res://assets/shovels.png" id="3_kmth4"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_cotoa"]
-vertices = PackedVector2Array(1135.98, 632, 12.1563, 632.992, 21.8438, 18.9688, 1135.01, 16.0234)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(12, 9, 1145, 6, 1146, 642, 2, 643)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_yrd4v"]
+vertices = PackedVector2Array(870.844, 306, 847.867, 21.4531, 1096.53, 31.6094, 1123.82, 508.094, 1055.93, 604.813, 338.93, 158.852, 341.93, 602.813, 37.0234, 597.18, 38.9609, 24.2813, 710.523, 42.7734, 558.242, 162.141, 755.57, 306, 592.258, 588.32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(5, 8, 9, 10), PackedInt32Array(10, 9, 11, 12), PackedInt32Array(4, 12, 11, 0)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(27, 607, 352, 613, 349, 169, 549, 172, 583, 598, 1061, 615, 1134, 511, 1106, 22, 837, 11, 860, 296, 764, 296, 719, 33, 29, 14, 27, 604)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpuac"]
+size = Vector2(165, 174)
 
 [node name="World" type="Node2D"]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_cotoa")
+position = Vector2(-1, 5)
+navigation_polygon = SubResource("NavigationPolygon_yrd4v")
 
 [node name="Friendly" parent="." instance=ExtResource("1_3gtl8")]
-position = Vector2(583, 317)
+position = Vector2(113, 85)
+
+[node name="Home" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1033, 396)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Home"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_wpuac")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Home"]
+scale = Vector2(0.772, 0.828)
+texture = ExtResource("2_w8a1y")
+
+[node name="Farm" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(181, 313)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Farm"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_wpuac")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Farm"]
+position = Vector2(4, 6.99999)
+scale = Vector2(0.356, 0.331)
+texture = ExtResource("3_kmth4")
