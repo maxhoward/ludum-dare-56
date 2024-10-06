@@ -1,11 +1,15 @@
-[gd_scene load_steps=9 format=4 uid="uid://cxd8ul1lfhmqw"]
+[gd_scene load_steps=11 format=4 uid="uid://cxd8ul1lfhmqw"]
 
 [ext_resource type="TileSet" uid="uid://bod5u2y4pwld0" path="res://assets/tilesets/environment_tileset.tres" id="1_a6s5n"]
 [ext_resource type="Script" path="res://scenes/DayNightCycle.gd" id="2_ciw8s"]
+[ext_resource type="TileSet" uid="uid://cy7obm6sje2wp" path="res://assets/tilesets/building_tileset.tres" id="2_mdbei"]
 [ext_resource type="Script" path="res://scripts/clock_controller.gd" id="3_s8y1q"]
 [ext_resource type="Texture2D" uid="uid://wtp1r4bgb7dt" path="res://assets/game_clock/clock_board.png" id="4_3rv7q"]
 [ext_resource type="Texture2D" uid="uid://btgbuhd0mvpav" path="res://assets/game_clock/moon.png" id="5_rbc61"]
 [ext_resource type="Texture2D" uid="uid://bi58iylj5ea25" path="res://assets/game_clock/sun.png" id="6_5qn1k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lujst"]
+size = Vector2(8, 9.5)
 
 [sub_resource type="Gradient" id="Gradient_b8rih"]
 offsets = PackedFloat32Array(0, 0.376623, 0.448052, 0.532468, 1)
@@ -46,6 +50,16 @@ tile_set = ExtResource("1_a6s5n")
 [node name="River" type="TileMapLayer" parent="TileMap"]
 tile_map_data = PackedByteArray("AAAiABoABwAAAAIAAAAiABsABwAAAAwAAAAhABsABwAAAAEAAAAgABsABwAAAAEAAAAfABsABwAAAAoAAAAfABoABwAAAAUAAAAeABoABwAAAAIAAAAeABsABwAAAAQAAAAeABwABwAAAAQAAAAeAB0ABwAAABgAAAAdAB0ABwAAAAEAAAAcAB0ABwAAAAoAAAAcABwABwAAAAUAAAAbABwABwAAAAEAAAAaABwABwAAAAEAAAAZABwABwAAACkAAAAjABoABwAAAAEAAAAkABoABwAAAAEAAAAeAB4ABwAAAAwAAAAdAB4ABwAAAAIAAAAdAB8ABwAAAAwAAAAcAB8ABwAAAAIAAAAcACAABwAAAAQAAAAcACEABwAAAAQAAAAcACIABwAAACUAAAAlABoABwAAAAUAAAAlABsABwAAAAoAAAAmABsABwAAAAEAAAAnABsABwAAAAwAAAAnABoABwAAACsAAAA=")
 tile_set = ExtResource("1_a6s5n")
+
+[node name="home" type="TileMapLayer" parent="TileMap"]
+tile_map_data = PackedByteArray("AAAdAAkABwACAAAAAAA=")
+tile_set = ExtResource("2_mdbei")
+
+[node name="Area2D" type="Area2D" parent="TileMap/home"]
+
+[node name="Doorway" type="CollisionShape2D" parent="TileMap/home/Area2D"]
+position = Vector2(472, 153.75)
+shape = SubResource("RectangleShape2D_lujst")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(1, 0.909804, 0.796078, 1)
