@@ -1,11 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://cxd8ul1lfhmqw"]
+[gd_scene load_steps=6 format=4 uid="uid://cxd8ul1lfhmqw"]
 
 [ext_resource type="TileSet" uid="uid://bod5u2y4pwld0" path="res://assets/tilesets/environment_tileset.tres" id="1_a6s5n"]
 [ext_resource type="Script" path="res://scenes/DayNightCycle.gd" id="2_ciw8s"]
-[ext_resource type="Script" path="res://scripts/clock_controller.gd" id="3_s8y1q"]
-[ext_resource type="Texture2D" uid="uid://wtp1r4bgb7dt" path="res://assets/game_clock/clock_board.png" id="4_3rv7q"]
-[ext_resource type="Texture2D" uid="uid://btgbuhd0mvpav" path="res://assets/game_clock/moon.png" id="5_rbc61"]
-[ext_resource type="Texture2D" uid="uid://bi58iylj5ea25" path="res://assets/game_clock/sun.png" id="6_5qn1k"]
+[ext_resource type="Script" path="res://scenes/DayNightCycleUI.gd" id="3_dybje"]
 
 [sub_resource type="Gradient" id="Gradient_b8rih"]
 offsets = PackedFloat32Array(0, 0.376623, 0.448052, 0.532468, 1)
@@ -54,52 +51,9 @@ gradient = SubResource("GradientTexture1D_xj2gq")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Clock" type="Control" parent="CanvasLayer"]
+[node name="DayNightCycleUI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 59.0
-offset_top = 28.0
-offset_right = 179.0
-offset_bottom = 137.0
-script = ExtResource("3_s8y1q")
-
-[node name="ClockBackground" type="Sprite2D" parent="CanvasLayer/Clock"]
-position = Vector2(53.25, 53.5)
-scale = Vector2(4.32813, 3.96875)
-texture = ExtResource("4_3rv7q")
-
-[node name="gameTime" type="RichTextLabel" parent="CanvasLayer/Clock"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 60.0
-offset_top = 58.0
-offset_right = 104.0
-offset_bottom = 81.0
-text = "00:00"
-
-[node name="gameDay" type="RichTextLabel" parent="CanvasLayer/Clock"]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 59.0
-offset_top = 27.0
-offset_right = -8.0
-offset_bottom = -49.0
-text = "Day 0"
-
-[node name="moonSprite" type="Sprite2D" parent="CanvasLayer/Clock"]
-unique_name_in_owner = true
-position = Vector2(33, 54)
-scale = Vector2(2.5625, 2.875)
-texture = ExtResource("5_rbc61")
-
-[node name="sunSprite" type="Sprite2D" parent="CanvasLayer/Clock"]
-unique_name_in_owner = true
-position = Vector2(32, 52.5)
-scale = Vector2(2.75, -2.6875)
-texture = ExtResource("6_5qn1k")
-
-[connection signal="is_day" from="CanvasModulate" to="CanvasLayer/Clock" method="_on_canvas_modulate_is_day"]
-[connection signal="time_tick" from="CanvasModulate" to="CanvasLayer/Clock" method="_on_canvas_modulate_time_tick"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_dybje")
