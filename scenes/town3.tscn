@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=4 uid="uid://cxd8ul1lfhmqw"]
+[gd_scene load_steps=5 format=4 uid="uid://cxd8ul1lfhmqw"]
 
 [ext_resource type="TileSet" uid="uid://bod5u2y4pwld0" path="res://assets/tilesets/environment_tileset.tres" id="1_a6s5n"]
+[ext_resource type="Script" path="res://scenes/DayNightCycle.gd" id="2_ciw8s"]
+
+[sub_resource type="Gradient" id="Gradient_b8rih"]
+offsets = PackedFloat32Array(0, 0.376623, 0.448052, 0.532468, 1)
+colors = PackedColorArray(0.397219, 0.396158, 1, 1, 0.8491, 0.532484, 0.82203, 1, 0.978435, 0.649274, 0.717106, 1, 1, 0.834221, 0.625396, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xj2gq"]
+gradient = SubResource("Gradient_b8rih")
 
 [node name="Town 2" type="Node2D"]
 
@@ -34,3 +42,8 @@ tile_set = ExtResource("1_a6s5n")
 [node name="River" type="TileMapLayer" parent="TileMap"]
 tile_map_data = PackedByteArray("AAAiABoABwAAAAIAAAAiABsABwAAAAwAAAAhABsABwAAAAEAAAAgABsABwAAAAEAAAAfABsABwAAAAoAAAAfABoABwAAAAUAAAAeABoABwAAAAIAAAAeABsABwAAAAQAAAAeABwABwAAAAQAAAAeAB0ABwAAABgAAAAdAB0ABwAAAAEAAAAcAB0ABwAAAAoAAAAcABwABwAAAAUAAAAbABwABwAAAAEAAAAaABwABwAAAAEAAAAZABwABwAAACkAAAAjABoABwAAAAEAAAAkABoABwAAAAEAAAAeAB4ABwAAAAwAAAAdAB4ABwAAAAIAAAAdAB8ABwAAAAwAAAAcAB8ABwAAAAIAAAAcACAABwAAAAQAAAAcACEABwAAAAQAAAAcACIABwAAACUAAAAlABoABwAAAAUAAAAlABsABwAAAAoAAAAmABsABwAAAAEAAAAnABsABwAAAAwAAAAnABoABwAAACsAAAA=")
 tile_set = ExtResource("1_a6s5n")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(1, 0.909804, 0.796078, 1)
+script = ExtResource("2_ciw8s")
+gradient = SubResource("GradientTexture1D_xj2gq")
