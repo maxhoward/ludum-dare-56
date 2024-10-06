@@ -25,6 +25,7 @@ offset_right = 371.0
 offset_bottom = 557.0
 
 [node name="JobButtonA" type="Button" parent="Option1/ColorRect"]
+layout_mode = 0
 offset_left = 38.0
 offset_top = 307.0
 offset_right = 199.0
@@ -32,6 +33,7 @@ offset_bottom = 373.0
 text = "Water"
 
 [node name="JobButtonB" type="Button" parent="Option1/ColorRect"]
+layout_mode = 0
 offset_left = 39.0
 offset_top = 386.0
 offset_right = 200.0
@@ -62,6 +64,7 @@ offset_right = 718.0
 offset_bottom = 559.0
 
 [node name="JobButtonA" type="Button" parent="Option2/ColorRect"]
+layout_mode = 0
 offset_left = 38.0
 offset_top = 307.0
 offset_right = 199.0
@@ -69,6 +72,7 @@ offset_bottom = 373.0
 text = "Farming"
 
 [node name="JobButtonB" type="Button" parent="Option2/ColorRect"]
+layout_mode = 0
 offset_left = 39.0
 offset_top = 386.0
 offset_right = 200.0
@@ -99,6 +103,7 @@ offset_right = 1065.0
 offset_bottom = 560.0
 
 [node name="JobButtonA" type="Button" parent="Option3/ColorRect"]
+layout_mode = 0
 offset_left = 38.0
 offset_top = 307.0
 offset_right = 199.0
@@ -106,6 +111,7 @@ offset_bottom = 373.0
 text = "Mining"
 
 [node name="JobButtonB" type="Button" parent="Option3/ColorRect"]
+layout_mode = 0
 offset_left = 39.0
 offset_top = 386.0
 offset_right = 200.0
