@@ -18,7 +18,7 @@ colors = PackedColorArray(0.397219, 0.396158, 1, 1, 0.8491, 0.532484, 0.82203, 1
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_xj2gq"]
 gradient = SubResource("Gradient_b8rih")
 
-[node name="Town 2" type="Node2D"]
+[node name="Town3" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_a6s5n")
@@ -56,9 +56,10 @@ tile_map_data = PackedByteArray("AAAdAAkABwACAAAAAAA=")
 tile_set = ExtResource("2_mdbei")
 
 [node name="Area2D" type="Area2D" parent="TileMap/home"]
+position = Vector2(471, 151)
 
 [node name="Doorway" type="CollisionShape2D" parent="TileMap/home/Area2D"]
-position = Vector2(472, 153.75)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_lujst")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -114,6 +115,14 @@ unique_name_in_owner = true
 position = Vector2(32, 52.5)
 scale = Vector2(2.75, -2.6875)
 texture = ExtResource("6_5qn1k")
+
+[node name="FarmMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(261, 230)
+
+[node name="HomeMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(471, 157)
 
 [connection signal="is_day" from="CanvasModulate" to="CanvasLayer/Clock" method="_on_canvas_modulate_is_day"]
 [connection signal="time_tick" from="CanvasModulate" to="CanvasLayer/Clock" method="_on_canvas_modulate_time_tick"]

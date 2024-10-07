@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://2capsiggdf77"]
+
+[ext_resource type="PackedScene" uid="uid://cxd8ul1lfhmqw" path="res://scenes/town3.tscn" id="1_5f2ru"]
+[ext_resource type="Script" path="res://scripts/farmer.gd" id="2_1d5yv"]
+[ext_resource type="Texture2D" uid="uid://dle2fcyw6esth" path="res://assets/icon.svg" id="2_71d3c"]
+[ext_resource type="Script" path="res://scripts/task_behavior.gd" id="3_qw21g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ecw55"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_jx4an"]
+vertices = PackedVector2Array(572.867, 88.9375, 1014.95, 139.039, 1058.89, 529.781, 834.773, 545.992, 224.383, 536.109, 142.602, 274.438, 363.102, 149.289, 415.883, 71.6016, 572.867, 88.9297, 196.602, 140.367)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), PackedInt32Array(7, 8, 0, 6), PackedInt32Array(5, 9, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(190, 130, 358, 139, 411, 61, 574, 79, 1024, 130, 1070, 539, 835, 556, 217, 546, 132, 274)])
+
+[node name="JobsSandbox" type="Node2D"]
+
+[node name="Town3" parent="." instance=ExtResource("1_5f2ru")]
+unique_name_in_owner = true
+
+[node name="Farmer" type="CharacterBody2D" parent="Town3"]
+position = Vector2(478, 225)
+scale = Vector2(0.795, 0.795)
+script = ExtResource("2_1d5yv")
+
+[node name="TaskBehavior" type="Node2D" parent="Town3/Farmer"]
+script = ExtResource("3_qw21g")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Town3/Farmer/TaskBehavior"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Town3/Farmer"]
+scale = Vector2(2.335, 2.335)
+shape = SubResource("CircleShape2D_ecw55")
+
+[node name="Sprite2D" type="Sprite2D" parent="Town3/Farmer"]
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_71d3c")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(6, 3)
+navigation_polygon = SubResource("NavigationPolygon_jx4an")
+
+[connection signal="task_done" from="Town3/Farmer/TaskBehavior" to="Town3/Farmer" method="_on_task_behavior_task_done"]
