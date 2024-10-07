@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://cxd8ul1lfhmqw"]
+[gd_scene load_steps=12 format=4 uid="uid://cxd8ul1lfhmqw"]
 
 [ext_resource type="TileSet" uid="uid://bod5u2y4pwld0" path="res://assets/tilesets/environment_tileset.tres" id="1_a6s5n"]
 [ext_resource type="Script" path="res://scenes/DayNightCycle.gd" id="2_ciw8s"]
@@ -18,7 +18,12 @@ colors = PackedColorArray(0.397219, 0.396158, 1, 1, 0.8491, 0.532484, 0.82203, 1
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_xj2gq"]
 gradient = SubResource("Gradient_b8rih")
 
-[node name="Town 2" type="Node2D"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_trbwb"]
+vertices = PackedVector2Array(1061.83, 93.8203, 1054.16, 566.938, 147.172, 562.047, 200.93, 79.1484)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(192, 69, 1072, 84, 1064, 577, 136, 572)])
+
+[node name="Town3" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_a6s5n")
@@ -56,9 +61,10 @@ tile_map_data = PackedByteArray("AAAdAAkABwACAAAAAAA=")
 tile_set = ExtResource("2_mdbei")
 
 [node name="Area2D" type="Area2D" parent="TileMap/home"]
+position = Vector2(471, 151)
 
 [node name="Doorway" type="CollisionShape2D" parent="TileMap/home/Area2D"]
-position = Vector2(472, 153.75)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_lujst")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
@@ -114,6 +120,29 @@ unique_name_in_owner = true
 position = Vector2(32, 52.5)
 scale = Vector2(2.75, -2.6875)
 texture = ExtResource("6_5qn1k")
+
+[node name="FarmMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(261, 230)
+
+[node name="HomeMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(471, 179)
+
+[node name="WaterMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(386, 432)
+
+[node name="WoodsMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(803, 204)
+
+[node name="MiningMarker" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(619, 384)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_trbwb")
 
 [connection signal="is_day" from="CanvasModulate" to="CanvasLayer/Clock" method="_on_canvas_modulate_is_day"]
 [connection signal="time_tick" from="CanvasModulate" to="CanvasLayer/Clock" method="_on_canvas_modulate_time_tick"]

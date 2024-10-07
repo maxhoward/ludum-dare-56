@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2ln0vq2gqs58"]
+[gd_scene load_steps=4 format=3 uid="uid://d2ln0vq2gqs58"]
 
 [ext_resource type="Script" path="res://scripts/picker.gd" id="1_gl1eb"]
-[ext_resource type="Texture2D" uid="uid://7m64d8xsu5hm" path="res://assets/hot trash ms paint lil guys/beaver.png" id="1_k7olq"]
-[ext_resource type="Texture2D" uid="uid://cdymqmpx38vy" path="res://assets/hot trash ms paint lil guys/centaur.png" id="2_cg1b4"]
-[ext_resource type="Texture2D" uid="uid://d0ciamhlk4he7" path="res://assets/hot trash ms paint lil guys/stoned_elemental.png" id="3_ab621"]
+[ext_resource type="Texture2D" uid="uid://cb0mxgsc71vee" path="res://assets/HAS Creature Pack (v.1.4)/centaur/icon_centaur_1_32x32.png" id="2_iwvsy"]
+[ext_resource type="Texture2D" uid="uid://ls50e412urb5" path="res://assets/HAS Creature Pack (v.1.4)/centaur/icon_centaur_0_32x32.png" id="3_8yh53"]
 
 [node name="Picker" type="Control"]
 layout_mode = 3
@@ -57,9 +56,9 @@ text = "Busy Beaver"
 
 [node name="Creature1Image" type="Sprite2D" parent="CreatureOption1/ColorRect"]
 unique_name_in_owner = true
-position = Vector2(121, 161)
-scale = Vector2(0.271765, 0.494662)
-texture = ExtResource("1_k7olq")
+position = Vector2(120.834, 175.92)
+scale = Vector2(5, 5)
+texture = ExtResource("2_iwvsy")
 
 [node name="CreatureOption2" type="Node" parent="."]
 
@@ -101,9 +100,9 @@ text = "Centaur"
 
 [node name="Creature2Image" type="Sprite2D" parent="CreatureOption2/ColorRect"]
 unique_name_in_owner = true
-position = Vector2(117, 156)
-scale = Vector2(0.622053, 0.523715)
-texture = ExtResource("2_cg1b4")
+position = Vector2(121.012, 174.405)
+scale = Vector2(4.747, 5)
+texture = ExtResource("3_8yh53")
 
 [node name="CreatureOption3" type="Node" parent="."]
 
@@ -144,9 +143,9 @@ text = "Stoned Elemental"
 
 [node name="Creature3Image" type="Sprite2D" parent="CreatureOption3/ColorRect"]
 unique_name_in_owner = true
-position = Vector2(121, 152)
-scale = Vector2(0.469507, 0.481845)
-texture = ExtResource("3_ab621")
+position = Vector2(122, 171)
+scale = Vector2(5, 5.128)
+texture = ExtResource("3_8yh53")
 
 [connection signal="button_down" from="CreatureOption1/ColorRect/Creature1JobA" to="." method="_on_creature_1_job_a_button_down"]
 [connection signal="button_down" from="CreatureOption1/ColorRect/Creature1JobA" to="." method="creature_1_job_1_clicked"]

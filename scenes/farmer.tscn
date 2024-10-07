@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7n064qn0rbdi"]
+
+[ext_resource type="Script" path="res://scripts/farmer.gd" id="1_dqb8i"]
+[ext_resource type="Script" path="res://scripts/task_behavior.gd" id="2_l06x3"]
+[ext_resource type="Texture2D" uid="uid://cb0mxgsc71vee" path="res://assets/HAS Creature Pack (v.1.4)/centaur/icon_centaur_1_32x32.png" id="3_60kao"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ecw55"]
+
+[node name="Farmer" type="CharacterBody2D"]
+position = Vector2(478, 225)
+scale = Vector2(0.795, 0.795)
+script = ExtResource("1_dqb8i")
+
+[node name="TaskBehavior" type="Node2D" parent="."]
+script = ExtResource("2_l06x3")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="TaskBehavior"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.335, 2.335)
+shape = SubResource("CircleShape2D_ecw55")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.045, 1.045)
+texture = ExtResource("3_60kao")
+
+[connection signal="task_done" from="TaskBehavior" to="." method="_on_task_behavior_task_done"]

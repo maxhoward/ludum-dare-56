@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://chgrou5xnef42"]
+
+[ext_resource type="PackedScene" uid="uid://cxd8ul1lfhmqw" path="res://scenes/town3.tscn" id="1_k25nw"]
+[ext_resource type="PackedScene" uid="uid://elcu1qavenw6" path="res://friendly_manager.tscn" id="2_2so6e"]
+
+[node name="spawn_test_sandbox" type="Node2D"]
+
+[node name="Town3" parent="." instance=ExtResource("1_k25nw")]
+unique_name_in_owner = true
+
+[node name="friendly_manager" parent="Town3" instance=ExtResource("2_2so6e")]

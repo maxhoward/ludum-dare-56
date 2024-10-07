@@ -11,7 +11,6 @@ func set_task_location(new_task_location: Vector2):
 	navigation_agent.target_position = new_task_location
 
 func is_at_location() -> bool:
-	assert(navigation_agent.is_target_reachable(), "Location unreachable")
 	return navigation_agent.is_navigation_finished()
 
 func get_task_direction(current_location: Vector2):
