@@ -1,9 +1,10 @@
-[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://bod5u2y4pwld0"]
+[gd_resource type="TileSet" load_steps=25 format=3 uid="uid://bod5u2y4pwld0"]
 
 [ext_resource type="Texture2D" uid="uid://e5e2r3vwc5nt" path="res://assets/HAS Overworld 2.1/GrassBiome/GB-LandTileset.png" id="1_hx2px"]
 [ext_resource type="Texture2D" uid="uid://cgbjamdmdrcv8" path="res://assets/HAS Overworld 2.1/GrassBiome/Animated Tiles/GB-GrassLand-Coast-Animated.png" id="2_4lbgl"]
 [ext_resource type="Texture2D" uid="uid://2iiyvqbddulh" path="res://assets/HAS Overworld 2.1/DirtBiome/DB-LandTileset.png" id="3_cw3mi"]
 [ext_resource type="Texture2D" uid="uid://d27uaspfl40du" path="res://assets/HAS Overworld 2.1/GrassBiome/Animated Tiles/GB-Land-Coast-Animated.png" id="3_ho52p"]
+[ext_resource type="Texture2D" uid="uid://b23rp2iwlcqpu" path="res://assets/Rory Creatures/MinitaurIdle.png" id="3_yhvol"]
 [ext_resource type="Texture2D" uid="uid://b36yqhj4vdmxk" path="res://assets/HAS Overworld 2.1/SandBiome/SB-LandTileset.png" id="4_yujhh"]
 [ext_resource type="Texture2D" uid="uid://bnl12jse6jv7p" path="res://assets/HAS Overworld 2.1/SandBiome/Animated Tiles/SB-Sand-Coast-Animated.png" id="5_jsjmp"]
 [ext_resource type="Texture2D" uid="uid://dxbx70t4wtwpm" path="res://assets/HAS Overworld 2.1/SandBiome/Animated Tiles/SB-Land-Coast-Animated.png" id="6_gme85"]
@@ -471,6 +472,21 @@ texture = ExtResource("2_4lbgl")
 0:3/animation_frame_6/duration = 1.0
 0:3/animation_frame_7/duration = 1.0
 0:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5d3qn"]
+texture = ExtResource("3_yhvol")
+0:0/animation_columns = 4
+0:0/0 = 0
+1:0/animation_columns = 4
+1:0/0 = 0
+2:0/animation_columns = 4
+2:0/0 = 0
+3:0/animation_columns = 4
+3:0/0 = 0
+0:1/animation_columns = 4
+0:1/0 = 0
+1:1/animation_columns = 4
+1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xptj1"]
 texture = ExtResource("3_cw3mi")
@@ -3913,3 +3929,4 @@ sources/7 = SubResource("TileSetAtlasSource_kjqoc")
 sources/8 = SubResource("TileSetAtlasSource_tu4e8")
 sources/9 = SubResource("TileSetAtlasSource_lclwp")
 sources/12 = SubResource("TileSetAtlasSource_xptj1")
+sources/10 = SubResource("TileSetAtlasSource_5d3qn")
