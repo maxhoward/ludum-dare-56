@@ -20,7 +20,6 @@ func _physics_process(delta: float) -> void:
 			move_and_slide()
 
 func transition_state() -> void:
-	print(state)
 	match state:
 		State.GOING_HOME:
 			set_state(State.RESTING)

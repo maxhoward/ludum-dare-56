@@ -1,12 +1,57 @@
-[gd_scene load_steps=3 format=3 uid="uid://elcu1qavenw6"]
+[gd_scene load_steps=10 format=3 uid="uid://elcu1qavenw6"]
 
 [ext_resource type="Script" path="res://scripts/friendly_manager.gd" id="1_mn5pq"]
 [ext_resource type="PackedScene" uid="uid://d2ln0vq2gqs58" path="res://scenes/picker.tscn" id="2_clqv0"]
+[ext_resource type="Script" path="res://scripts/friendly_creature.gd" id="3_tbrqf"]
+[ext_resource type="Texture2D" uid="uid://60mfjla6kjg6" path="res://assets/HAS Creature Pack (v.1.4)/harpy/icon_harpy_1_32x32.png" id="4_0g82o"]
+[ext_resource type="Texture2D" uid="uid://fxcvav12j4en" path="res://assets/HAS Creature Pack (v.1.4)/hell hound/icon_hell_hound_1_32x32.png" id="5_s88x4"]
+[ext_resource type="Texture2D" uid="uid://cjhsur4fib58q" path="res://assets/HAS Creature Pack (v.1.4)/naga/icon_naga_0_32x32.png" id="6_xg7eu"]
+[ext_resource type="Texture2D" uid="uid://dxyvwn6hmryaq" path="res://assets/HAS Creature Pack (v.1.4)/pixie/icon_pixie_0_32x32.png" id="7_jar2x"]
+[ext_resource type="Texture2D" uid="uid://k8knlcp5ruas" path="res://assets/HAS Creature Pack (v.1.4)/treant/icon_treant_1_32x32.png" id="8_ynveh"]
+[ext_resource type="Texture2D" uid="uid://c3ht5it8kmqgf" path="res://assets/HAS Creature Pack (v.1.4)/vampire/icon_vampire_1_32x32.png" id="9_bduev"]
 
-[node name="friendly_manager" type="Node"]
+[node name="friendly_manager" type="Node" node_paths=PackedStringArray("creatures")]
 script = ExtResource("1_mn5pq")
+creatures = [NodePath("FriendlyCreaturePool/Alice"), NodePath("FriendlyCreaturePool/Bob"), NodePath("FriendlyCreaturePool/Charlie"), NodePath("FriendlyCreaturePool/David"), NodePath("FriendlyCreaturePool/Ellie"), NodePath("FriendlyCreaturePool/Frank")]
 
 [node name="Picker" parent="." instance=ExtResource("2_clqv0")]
 unique_name_in_owner = true
+
+[node name="FriendlyCreaturePool" type="Node" parent="."]
+
+[node name="Alice" type="Node2D" parent="FriendlyCreaturePool"]
+script = ExtResource("3_tbrqf")
+creature_name = "Alice"
+picker_thumbnail = ExtResource("4_0g82o")
+
+[node name="Bob" type="Node2D" parent="FriendlyCreaturePool"]
+script = ExtResource("3_tbrqf")
+creature_name = "Bob"
+allowed_jobs = Array[int]([1, 2])
+picker_thumbnail = ExtResource("5_s88x4")
+
+[node name="Charlie" type="Node2D" parent="FriendlyCreaturePool"]
+script = ExtResource("3_tbrqf")
+creature_name = "Charlie"
+allowed_jobs = Array[int]([0, 3])
+picker_thumbnail = ExtResource("6_xg7eu")
+
+[node name="David" type="Node2D" parent="FriendlyCreaturePool"]
+script = ExtResource("3_tbrqf")
+creature_name = "David"
+allowed_jobs = Array[int]([2, 3])
+picker_thumbnail = ExtResource("7_jar2x")
+
+[node name="Ellie" type="Node2D" parent="FriendlyCreaturePool"]
+script = ExtResource("3_tbrqf")
+creature_name = "Ellie"
+allowed_jobs = Array[int]([3, 0])
+picker_thumbnail = ExtResource("8_ynveh")
+
+[node name="Frank" type="Node2D" parent="FriendlyCreaturePool"]
+script = ExtResource("3_tbrqf")
+creature_name = "Frank"
+allowed_jobs = Array[int]([2, 1])
+picker_thumbnail = ExtResource("9_bduev")
 
 [connection signal="creature_selected" from="Picker" to="." method="handle_selection"]

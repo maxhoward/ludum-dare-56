@@ -26,7 +26,8 @@ offset_top = 72.0
 offset_right = 371.0
 offset_bottom = 557.0
 
-[node name="JobButtonA" type="Button" parent="CreatureOption1/ColorRect"]
+[node name="Creature1JobA" type="Button" parent="CreatureOption1/ColorRect"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 38.0
 offset_top = 307.0
@@ -34,7 +35,8 @@ offset_right = 199.0
 offset_bottom = 373.0
 text = "Water"
 
-[node name="JobButtonB" type="Button" parent="CreatureOption1/ColorRect"]
+[node name="Creature1JobB" type="Button" parent="CreatureOption1/ColorRect"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 39.0
 offset_top = 386.0
@@ -42,7 +44,8 @@ offset_right = 200.0
 offset_bottom = 452.0
 text = "Woodcutting"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CreatureOption1/ColorRect"]
+[node name="Creature1Name" type="RichTextLabel" parent="CreatureOption1/ColorRect"]
+unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -52,7 +55,8 @@ offset_right = 203.0
 offset_bottom = 90.0
 text = "Busy Beaver"
 
-[node name="Sprite2D" type="Sprite2D" parent="CreatureOption1/ColorRect"]
+[node name="Creature1Image" type="Sprite2D" parent="CreatureOption1/ColorRect"]
+unique_name_in_owner = true
 position = Vector2(121, 161)
 scale = Vector2(0.271765, 0.494662)
 texture = ExtResource("1_k7olq")
@@ -64,8 +68,10 @@ offset_left = 483.0
 offset_top = 74.0
 offset_right = 718.0
 offset_bottom = 559.0
+metadata/_edit_use_anchors_ = true
 
-[node name="JobButtonA" type="Button" parent="CreatureOption2/ColorRect"]
+[node name="Creature2JobA" type="Button" parent="CreatureOption2/ColorRect"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 38.0
 offset_top = 307.0
@@ -73,7 +79,8 @@ offset_right = 199.0
 offset_bottom = 373.0
 text = "Farming"
 
-[node name="JobButtonB" type="Button" parent="CreatureOption2/ColorRect"]
+[node name="Creature2JobB" type="Button" parent="CreatureOption2/ColorRect"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 39.0
 offset_top = 386.0
@@ -81,7 +88,8 @@ offset_right = 200.0
 offset_bottom = 452.0
 text = "Crafting"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CreatureOption2/ColorRect"]
+[node name="Creature2Name" type="RichTextLabel" parent="CreatureOption2/ColorRect"]
+unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -91,7 +99,8 @@ offset_right = 203.0
 offset_bottom = 90.0
 text = "Centaur"
 
-[node name="Sprite2D" type="Sprite2D" parent="CreatureOption2/ColorRect"]
+[node name="Creature2Image" type="Sprite2D" parent="CreatureOption2/ColorRect"]
+unique_name_in_owner = true
 position = Vector2(117, 156)
 scale = Vector2(0.622053, 0.523715)
 texture = ExtResource("2_cg1b4")
@@ -104,7 +113,8 @@ offset_top = 75.0
 offset_right = 1065.0
 offset_bottom = 560.0
 
-[node name="JobButtonA" type="Button" parent="CreatureOption3/ColorRect"]
+[node name="Creature3JobA" type="Button" parent="CreatureOption3/ColorRect"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 38.0
 offset_top = 307.0
@@ -112,7 +122,8 @@ offset_right = 199.0
 offset_bottom = 373.0
 text = "Mining"
 
-[node name="JobButtonB" type="Button" parent="CreatureOption3/ColorRect"]
+[node name="Creature3JobB" type="Button" parent="CreatureOption3/ColorRect"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 39.0
 offset_top = 386.0
@@ -120,7 +131,8 @@ offset_right = 200.0
 offset_bottom = 452.0
 text = "Woodcutting"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CreatureOption3/ColorRect"]
+[node name="Creature3Name" type="RichTextLabel" parent="CreatureOption3/ColorRect"]
+unique_name_in_owner = true
 modulate = Color(0, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -130,9 +142,16 @@ offset_right = 203.0
 offset_bottom = 90.0
 text = "Stoned Elemental"
 
-[node name="Sprite2D" type="Sprite2D" parent="CreatureOption3/ColorRect"]
+[node name="Creature3Image" type="Sprite2D" parent="CreatureOption3/ColorRect"]
+unique_name_in_owner = true
 position = Vector2(121, 152)
 scale = Vector2(0.469507, 0.481845)
 texture = ExtResource("3_ab621")
 
-[connection signal="button_down" from="CreatureOption1/ColorRect/JobButtonA" to="." method="creature_1_job_1_clicked"]
+[connection signal="button_down" from="CreatureOption1/ColorRect/Creature1JobA" to="." method="_on_creature_1_job_a_button_down"]
+[connection signal="button_down" from="CreatureOption1/ColorRect/Creature1JobA" to="." method="creature_1_job_1_clicked"]
+[connection signal="button_down" from="CreatureOption1/ColorRect/Creature1JobB" to="." method="_on_creature_1_job_b_button_down"]
+[connection signal="button_down" from="CreatureOption2/ColorRect/Creature2JobA" to="." method="_on_creature_2_job_a_button_down"]
+[connection signal="button_down" from="CreatureOption2/ColorRect/Creature2JobB" to="." method="_on_creature_2_job_b_button_down"]
+[connection signal="button_down" from="CreatureOption3/ColorRect/Creature3JobA" to="." method="_on_creature_3_job_a_button_down"]
+[connection signal="button_down" from="CreatureOption3/ColorRect/Creature3JobB" to="." method="_on_creature_3_job_b_button_down"]
